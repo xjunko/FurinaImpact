@@ -31,6 +31,14 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration Release
+
+    - name: Compress Build
+      uses: thedoctor0/zip-release@0.7.5
+      with:
+        type: "zip"
+        filename: "${{ matrix.asset_name }}.zip"
+        path: ./FurinaImpact.Gameserver/bin/
+
     - name: Upload Build
       uses: svenstaro/upload-release-action@v2
       with:
@@ -39,4 +47,4 @@ jobs:
         asset_name: ${{ matrix.asset_name }}
         body: "Another day, another dollar."
         overwrite: true
-        file: ./FurinaImpact.Gameserver/bin/
+        file: "${{ matrix.asset_name }}.zip"
