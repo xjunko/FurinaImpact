@@ -44,7 +44,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref }}
-        asset_name: ${{ matrix.asset_name }}
-        body: "Another day, another dollar."
+        asset_name: "${{ matrix.asset_name }}.zip"
+        body: "Another day, another dollar.\n You can get the resources from [here](https://discord.gg/sHZuMpCpVw)."
         overwrite: true
         file: "${{ matrix.asset_name }}.zip"
