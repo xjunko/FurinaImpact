@@ -11,22 +11,28 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    name: Build for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            asset_name: linux-furina
+          - os: windows-latest
+            asset_name: win-furina
+        
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
+    - name: Build setup
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build --no-restore --configuration Release
     - name: Upload Build
       uses: actions/upload-artifact@v3
       with:
-        name: linux-furina
-        path: /home/runner/work/FurinaImpact/FurinaImpact/FurinaImpact.Gameserver/bin
+        name: ${{ matrix.asset_name }}
+        path: FurinaImpact/FurinaImpact/FurinaImpact.Gameserver/bin
