@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.asset_name }}
-        path: FurinaImpact/FurinaImpact/FurinaImpact.Gameserver/bin
+        path: ./FurinaImpact.Gameserver/bin
