@@ -32,7 +32,11 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release
     - name: Upload Build
-      uses: actions/upload-artifact@v3
+      uses: svenstaro/upload-release-action@v2
       with:
-        name: ${{ matrix.asset_name }}
-        path: ./FurinaImpact.Gameserver/bin
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.ref }}
+        asset_name: ${{ matrix.asset_name }}
+        body: "Another day, another dollar."
+        overwrite: true
+        file: ./FurinaImpact.Gameserver/bin/
