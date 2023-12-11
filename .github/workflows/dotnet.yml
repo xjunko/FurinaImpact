@@ -18,8 +18,10 @@ jobs:
         include:
           - os: ubuntu-latest
             asset_name: linux-furina
+            dumbass_zip: tar -xf
           - os: windows-latest
             asset_name: win-furina
+            dumbass_zip: unzip 
         
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +35,7 @@ jobs:
         mkdir tmp
         cd tmp
         curl https://fire.redz.workers.dev/ -o gaming.zip
-        tar -xf gaming.zip
+        ${{ matrix.dumbass_zip }} gaming.zip
         
     - name: Restore dependencies
       working-directory: ./tmp/furinaimpact
