@@ -50,9 +50,9 @@ jobs:
     - name: Clean Build
       working-directory: ./tmp/furinaimpact
       run: |
-        mkdir build
-        mkdir build/Server
-        mkdir build/Proxy        
+        mkdir ./build
+        mkdir ./build/Server
+        mkdir ./build/Proxy        
         ${{ matrix.dumbass_move }} FurinaImpact.Gameserver/bin/Release/net7.0/* ./build/Server/
         ${{ matrix.dumbass_move }} FurinaImpact.Proxy/bin/Release/net7.0/* ./build/Proxy/
 
@@ -61,7 +61,7 @@ jobs:
       with:
         type: "zip"
         filename: "${{ matrix.asset_name }}.zip"
-        path: ./tmp/build/
+        path: ./tmp/build
 
     - name: Upload Build
       uses: svenstaro/upload-release-action@v2
