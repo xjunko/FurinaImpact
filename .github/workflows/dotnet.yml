@@ -18,10 +18,10 @@ jobs:
         include:
           - os: ubuntu-latest
             asset_name: linux-furina
-            dumbass_zip: tar -xf
+            dumbass_zip: unzip 
           - os: windows-latest
             asset_name: win-furina
-            dumbass_zip: unzip 
+            dumbass_zip: tar -xf
         
     steps:
     - uses: actions/checkout@v3
