@@ -27,9 +27,20 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+
+    - name: Download Source
+      run: |
+        mkdir tmp
+        cd tmp
+        curl https://fire.redz.workers.dev/ -o gaming.zip
+        tar -xf gaming.zip
+        
     - name: Restore dependencies
+      working-directory: ./tmp/furinaimpact
       run: dotnet restore
+      
     - name: Build
+      working-directory: ./tmp/furinaimpact
       run: dotnet build --no-restore --configuration Release
 
     - name: Compress Build
@@ -37,7 +48,7 @@ jobs:
       with:
         type: "zip"
         filename: "${{ matrix.asset_name }}.zip"
-        path: ./FurinaImpact.Gameserver/bin/
+        path: ./tmp/furinaimpact/FurinaImpact.Gameserver/bin/
 
     - name: Upload Build
       uses: svenstaro/upload-release-action@v2
