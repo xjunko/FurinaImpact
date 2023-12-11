@@ -1,5 +1,0 @@
-syntax = "proto3";
-option csharp_namespace = "FurinaImpact.Protocol";
-message CoinCollectOperatorInfo {
-  uint32 level_id = 1;
-}

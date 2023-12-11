@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "FurinaImpact.Protocol";
-message EnterSceneDoneReq {
-  uint32 enter_scene_token = 9;
-}

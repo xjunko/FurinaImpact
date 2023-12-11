@@ -52,8 +52,10 @@ jobs:
       run: |
         mkdir ./build
         mkdir ./build/Server
+        mkdir ./build/SDK
         mkdir ./build/Proxy        
         ${{ matrix.dumbass_move }} FurinaImpact.Gameserver/bin/Release/net7.0/* ./build/Server/
+        ${{ matrix.dumbass_move }} FurinaImpact.SDK/bin/Release/net7.0/* ./build/SDK/
         ${{ matrix.dumbass_move }} FurinaImpact.Proxy/bin/Release/net7.0/* ./build/Proxy/
         ${{ matrix.dumbass_move }} ./build ../../
 

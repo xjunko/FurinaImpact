@@ -1,7 +1,0 @@
-syntax = "proto3";
-import "PropValue.proto";
-option csharp_namespace = "FurinaImpact.Protocol";
-message PropPair {
-  PropValue prop_value = 2;
-  uint32 type = 1;
-}

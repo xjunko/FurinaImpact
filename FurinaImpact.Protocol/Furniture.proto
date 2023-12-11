@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "FurinaImpact.Protocol";
-message Furniture {
-  uint32 count = 1;
-}

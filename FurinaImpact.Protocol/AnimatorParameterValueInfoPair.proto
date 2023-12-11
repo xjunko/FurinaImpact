@@ -1,7 +1,0 @@
-syntax = "proto3";
-import "AnimatorParameterValueInfo.proto";
-option csharp_namespace = "FurinaImpact.Protocol";
-message AnimatorParameterValueInfoPair {
-  AnimatorParameterValueInfo animator_para = 2;
-  int32 name_id = 1;
-}

@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message SceneInitFinishRsp {
-	uint32 enter_scene_token = 14;
-}

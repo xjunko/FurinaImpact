@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "FurinaImpact.Protocol";
-message GetPlayerTokenReq {
-  string online_id = 13;
-  string client_rand_key = 911;
-  uint32 platform_type = 10;
-}

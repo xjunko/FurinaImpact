@@ -1,8 +1,0 @@
-syntax = "proto3";
-import "MaterialDeleteInfo.proto";
-
-option csharp_namespace = "FurinaImpact.Protocol";
-message Material {
-  MaterialDeleteInfo delete_info = 2;
-  uint32 count = 1;
-}

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-option csharp_namespace = "FurinaImpact.Protocol";
-message PingRsp {
-  uint32 server_time = 5;
-}

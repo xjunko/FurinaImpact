@@ -1,9 +1,6 @@
 # FurinaImpact
 API Implementation for some anime turn-based game.
 
-### Building
-You can build it with .NET 7 SDK
-
 ### Resources
 You can get resources in our [Discord Server](https://discord.gg/sHZuMpCpVw)
 
@@ -19,5 +16,8 @@ For connecting to FurinaImpact, you can use FurinaImpact.Proxy. Just launch it a
 Feel free to ask your questions in our [Discord Server](https://discord.gg/sHZuMpCpVw)
 
 ### Disclaimer
-This is a forked version of the original repo, which got taken down.
-God knows how long this one will survive.
+This is not the original repo, it's a forked repo, the original one got taken down, last commit [here](https://github.com/xjunko/FurinaImpact/tree/fc2505755f75f59f1f34a9fb471ffe62bc571061). <br/>
+Only thing that's different here is that it builds itself daily from the new (hopefully free from dmca) repo.<br/>
+You can get it from the [Discord Server](https://discord.gg/sHZuMpCpVw).
+
+#### I have no affliation with the original dev/team, I'm just some rando.

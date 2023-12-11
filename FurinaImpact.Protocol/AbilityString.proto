@@ -1,8 +1,0 @@
-syntax = "proto3";
-option csharp_namespace = "FurinaImpact.Protocol";
-message AbilityString {
-  oneof type {
-    string str = 1;
-    uint32 hash = 2;
-  }
-}

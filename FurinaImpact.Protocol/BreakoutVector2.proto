@@ -1,6 +1,0 @@
-syntax = "proto3";
-option csharp_namespace = "FurinaImpact.Protocol";
-message BreakoutVector2 {
-  int32 x = 1;
-  int32 y = 2;
-}
