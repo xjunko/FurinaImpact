@@ -19,9 +19,11 @@ jobs:
           - os: ubuntu-latest
             asset_name: linux-furina
             dumbass_zip: unzip 
+            dumbass_move: mv
           - os: windows-latest
             asset_name: win-furina
             dumbass_zip: tar -xf
+            dumbass_move: move
         
     steps:
     - uses: actions/checkout@v3
@@ -45,12 +47,21 @@ jobs:
       working-directory: ./tmp/furinaimpact
       run: dotnet build --no-restore --configuration Release
 
+    - name: Clean Build
+      working-directory: ./tmp/furinaimpact
+      run: |
+        mkdir build
+        mkdir build/Server
+        mkdir build/Proxy        
+        ${{ matrix.dumbass_move }} FurinaImpact.Gameserver/bin/Release/net7.0/* ./build/Server/
+        ${{ matrix.dumbass_move }} FurinaImpact.Proxy/bin/Release/net7.0/* ./build/Proxy/
+
     - name: Compress Build
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: "zip"
         filename: "${{ matrix.asset_name }}.zip"
-        path: ./tmp/furinaimpact/FurinaImpact.Gameserver/bin/
+        path: ./tmp/build/
 
     - name: Upload Build
       uses: svenstaro/upload-release-action@v2
